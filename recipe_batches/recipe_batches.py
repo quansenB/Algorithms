@@ -3,7 +3,18 @@
 import math
 
 def recipe_batches(recipe, ingredients):
-  pass 
+  batches =  []
+  quantity = None
+  try:
+    for i in  recipe:
+      if(ingredients[i]):
+        quantity = int(ingredients[i]/ recipe[i])
+        batches.append(quantity)
+      maxBatches = min(batches)
+    return maxBatches
+  except:
+    maxBatches = 0
+    return maxBatches
 
 
 if __name__ == '__main__':
